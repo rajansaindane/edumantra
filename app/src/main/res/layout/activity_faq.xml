@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.srajan.edumantra.FAQ"
+    android:weightSum="1"
+    android:orientation="vertical"
+    android:background="#59c4be"
+    >
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <ImageView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/faqq"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#91d8d3"
+        android:id="@+id/txtfaq1"
+        android:textStyle="italic"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#7fd1cc"
+        android:id="@+id/txtfaq2"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#6ccbc4"
+        android:id="@+id/txtfaq3"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimaryDark"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#59c4bd"
+        android:id="@+id/txtfaq4"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#46bdb6"
+        android:id="@+id/txtfaq5"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#3dada5"
+        android:id="@+id/txtfaq6"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:paddingLeft="10dp"
+        android:gravity="center_vertical"
+        />
+    </LinearLayout>
+    </ScrollView>
+</LinearLayout>

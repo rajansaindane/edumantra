@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/action_Artical"
+        android:orderInCategory="100"
+        android:title="Artical"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_foldednewspaper"
+        />
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="100"
+        android:title="About Us"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_help"/>
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:title="Logout"
+        app:showAsAction="never"
+        android:icon="@drawable/ic_logout"/>
+    </group>
+</menu>

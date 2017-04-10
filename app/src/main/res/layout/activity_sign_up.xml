@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#59c4be"
+    tools:context="com.srajan.edumantra.SignUpActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Name"
+    android:layout_marginTop="20dp"
+    android:paddingLeft="15dp"
+    android:id="@+id/name"
+    android:drawableLeft="@drawable/ic_userc"
+    android:drawablePadding="15dp"
+    android:textColorHint="#ffffff"
+    android:lines="1"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="15dp"
+        android:id="@+id/add"
+        android:drawableLeft="@drawable/ic_placeholder"
+        android:drawablePadding="15dp"
+        android:textColorHint="#ffffff"
+        android:maxLines="2"/>
+
+
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contact Number"
+        android:paddingLeft="15dp"
+        android:id="@+id/contactno"
+        android:drawableLeft="@drawable/ic_phone_callf"
+        android:drawablePadding="15dp"
+        android:textColorHint="#ffffff"
+        android:inputType="number"
+        android:maxLines="1"/>
+    <EditText
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Qualification"
+        android:paddingLeft="15dp"
+        android:id="@+id/qualification"
+        android:drawableLeft="@drawable/ic_mortarboardf"
+        android:drawablePadding="15dp"
+        android:textColorHint="#ffffff"
+        android:maxLines="1"/>
+
+    <EditText
+        android:textColorHint="#ffffff"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email Id"
+        android:paddingLeft="15dp"
+        android:id="@+id/id"
+        android:drawableLeft="@drawable/ic_mail"
+        android:drawablePadding="15dp"
+        android:inputType="textEmailAddress"
+        android:maxLines="2"/>
+
+    <EditText
+        android:textColorHint="#ffffff"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username  ex(mahacareermitra123)"
+        android:paddingLeft="15dp"
+        android:id="@+id/username"
+        android:drawableLeft="@drawable/ic_useravtar"
+        android:drawablePadding="15dp"
+        android:maxLines="1"/>
+
+    <EditText
+        android:textColorHint="#ffffff"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password (minimum 6 characters)"
+        android:paddingLeft="15dp"
+        android:id="@+id/password"
+        android:drawableLeft="@drawable/ic_lockedc"
+        android:drawablePadding="15dp"
+        android:maxLines="1"/>
+
+    <EditText
+        android:textColorHint="#ffffff"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Conform Password"
+        android:paddingLeft="15dp"
+        android:id="@+id/conformpassword"
+        android:drawableLeft="@drawable/ic_lockedc"
+        android:drawablePadding="15dp"
+        android:maxLines="1"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="#50b0ab"
+        android:text="Sign In"
+        android:id="@+id/btns"
+        android:textColor="#ffffff"
+        />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.srajan.edumantra">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".ScienceAfterTen" />
+        <activity
+            android:name=".CareerPath"
+            android:label="Career Path"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AfterScience"
+            android:label="Science"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AfterArts"
+            android:label="Arts"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AfterCommerce"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Other"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Competative"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Designing"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HomeScreen"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Confused"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            >
+        </activity>
+        <activity android:name=".SignInActivity" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".FAQ" />
+    </application>
+
+</manifest>

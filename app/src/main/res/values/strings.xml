@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">EduMantra</string>
+    <string name="science">Science</string>
+    <string name="art">Arts</string>
+    <string name="commerce">Commerce</string>
+    <string name="others">Other</string>
+    <string name="competative">Competative</string>
+    <string name="design">Design</string>
+    <string name="user">Username</string>
+    <string name="password">Password</string>
+    <string name="forget">Forget Password</string>
+    <string name="register">DONT HAVE AN ACCOUNT? SIGN UP NOW!</string>
+    <string name="title_activity_navigation">Navigation</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_artical">Artical</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+    <string name="title_activity_home_navigation">HomeNavigation</string>
+
+    <string name="action_settings">Settings</string>
+</resources>
