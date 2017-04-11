@@ -1,20 +1,26 @@
 package com.srajan.edumantra;
 
 import android.content.Intent;
+import android.graphics.Matrix;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.srajan.edumantra.Fragments.Fragment_article;
 
+import static android.R.attr.pivotX;
+import static android.R.attr.pivotY;
+
 public class CareerPath extends AppCompatActivity {
 
-    TextView sci,art,com,oth,compit,design;
+    TextView sci,art,com,oth,compit,design,defence;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,6 +32,23 @@ public class CareerPath extends AppCompatActivity {
         design=(TextView)findViewById(R.id.txtdesign);
         compit=(TextView)findViewById(R.id.txtcomp);
         oth=(TextView)findViewById(R.id.txtother);
+        defence=(TextView)findViewById(R.id.txtdefence);
+
+        Animation animZoomin = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_career);
+        sci.startAnimation(animZoomin);
+        Animation animZoomin1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_career);
+        art.startAnimation(animZoomin1);
+        Animation animZoomin2 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_career);
+        com.startAnimation(animZoomin2);
+        Animation animZoomin3 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_career);
+        design.startAnimation(animZoomin3);
+        Animation animZoomin4 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_career);
+        compit.startAnimation(animZoomin4);
+        Animation animZoomin5 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_career);
+        oth.startAnimation(animZoomin5);
+        Animation animZoomin6 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_career);
+        defence.startAnimation(animZoomin6);
+
 //        sci=(ImageView)findViewById(R.id.imgscience);
 //        art=(ImageView)findViewById(R.id.imageView3);
 //        com=(ImageView)findViewById(R.id.imgcom);
@@ -41,6 +64,13 @@ public class CareerPath extends AppCompatActivity {
        design.setOnClickListener(this::opendesign);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        ImageView imageView=(ImageView)findViewById(R.id.imageView3);
+//        Matrix matrix = new Matrix();
+//        imageView.setScaleType(ImageView.ScaleType.MATRIX);   //required
+//        matrix.postRotate((float) 360, pivotX, pivotY);
+//        imageView.setImageMatrix(matrix);
+
     }
 
     private void opendesign(View view) {

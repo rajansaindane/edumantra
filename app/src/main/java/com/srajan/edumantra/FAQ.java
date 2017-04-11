@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class FAQ extends AppCompatActivity {
@@ -28,6 +31,10 @@ public class FAQ extends AppCompatActivity {
         textView3.setText("4. How to switch from one field to another ?");
         textView4.setText("5. How to choose field and colleges ?");
         textView5.setText("6. How to download CareerMitra Application ?");
+
+        ImageView imageView=(ImageView)findViewById(R.id.imgcon);
+        Animation animZoomin = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom);
+        imageView.startAnimation(animZoomin);
 
 
 

@@ -208,7 +208,8 @@
         app:layout_constraintVertical_bias="0.345"
         android:textColor="@color/colorPrimaryDark"
         android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.275" />
+        app:layout_constraintHorizontal_bias="0.275"
+        android:id="@+id/txtdefence"/>
 
 
 </android.support.constraint.ConstraintLayout>

@@ -35,10 +35,11 @@ public class AfterScience extends AppCompatActivity {
         ImageView imageView=(ImageView)findViewById(R.id.imgaftertensci);
         ImageView imageView1=(ImageView)findViewById(R.id.imgaftertwale);
         imageView.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(AfterScience.this,ScienceAfterTen.class);
-                intent.putExtra("srajan",1);
+               // intent.putExtra("srajan",1);
                 startActivity(intent);
             }
         });
@@ -116,21 +117,6 @@ public class AfterScience extends AppCompatActivity {
 
         handler.postDelayed(runnable, 5000);
 
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this,R.style.DialogTheme);
-//        LayoutInflater lnflater=LayoutInflater.from(this);
-//        View view=lnflater.inflate(R.layout.dialog,null);
-//        builder.setView(view);
-//        builder.setCancelable(false);
-//
-//        builder.setPositiveButton("skip >>", new DialogInterface.OnClickListener()
-//        {
-//            public void onClick(DialogInterface dialog, int id)
-//            {
-//                dialog.dismiss();
-//            }
-//        });
-//        AlertDialog alert = builder.create();
-//        alert.show();
     }
 
 }

@@ -17,6 +17,8 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -96,8 +98,19 @@ public class HomeScreen extends AppCompatActivity {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(HomeScreen.this,CareerPath.class);
-                startActivity(intent);
+                Animation animZoomin = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom);
+                imageView.startAnimation(animZoomin);
+
+                new Handler().postDelayed(new Runnable() {
+
+                    @Override
+                            public void run(){
+                    Intent intent = new Intent(HomeScreen.this, CareerPath.class);
+
+                    startActivity(intent);
+                }
+                },700);
+
 
             }
         });
@@ -106,8 +119,18 @@ public class HomeScreen extends AppCompatActivity {
         imageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(HomeScreen.this,Confused.class);
-                startActivity(intent);
+
+                Animation animZoomin = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom);
+                imageView1.startAnimation(animZoomin);
+                new Handler().postDelayed(new Runnable() {
+
+                    @Override
+                    public void run(){
+                        Intent intent = new Intent(HomeScreen.this, Confused.class);
+
+                        startActivity(intent);
+                    }
+                },700);
             }
         });
 
@@ -115,8 +138,18 @@ public class HomeScreen extends AppCompatActivity {
         imageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(HomeScreen.this,FAQ.class);
-                startActivity(intent);
+
+                Animation animZoomin = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom);
+                imageView2.startAnimation(animZoomin);
+                new Handler().postDelayed(new Runnable() {
+
+                    @Override
+                    public void run(){
+                        Intent intent = new Intent(HomeScreen.this, FAQ.class);
+
+                        startActivity(intent);
+                    }
+                },700);
             }
         });
 //        ImageView imagevideo=(ImageView)findViewById(R.id.imgvideo);

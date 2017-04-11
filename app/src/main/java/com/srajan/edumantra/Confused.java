@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 
 public class Confused extends AppCompatActivity {
 
@@ -13,6 +16,13 @@ public class Confused extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confused);
 
+        ImageView imageView=(ImageView)findViewById(R.id.question);
+        Animation animZoomin = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_career);
+        imageView.startAnimation(animZoomin);
+
+        ImageView imageView1=(ImageView)findViewById(R.id.imageView11);
+        Animation animZoomin1 = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.zoom_career);
+        imageView1.startAnimation(animZoomin1);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
