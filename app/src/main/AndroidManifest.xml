@@ -62,7 +62,8 @@
         <activity android:name=".MainCourses.AfterTwelveList" />
         <activity android:name=".CoursesAfterTen.CoursesAfterElevenList" />
         <activity android:name=".CoursesAfterTen.CoursesAfterITIList" />
-        <activity android:name=".CoursesAfterTen.CoursesAfterDiplomaList"></activity>
+        <activity android:name=".CoursesAfterTen.CoursesAfterDiplomaList" />
+        <activity android:name=".CoursesAfterTwelve.CoursesInPcm"></activity>
     </application>
 
 </manifest>
