@@ -26,7 +26,7 @@
     <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#ff9800">
+        android:background="#7a1c22">
 
 
 
@@ -44,7 +44,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="240dp"
+                android:layout_height="260dp"
                 android:background="#a3262e">
 
                 <LinearLayout
@@ -78,7 +78,7 @@
 
                 </LinearLayout>
 
-
+                <!--ff9800-->
                 <!--<ImageView-->
                 <!--android:layout_width="match_parent"-->
                 <!--android:layout_height="match_parent"-->
@@ -90,16 +90,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:background="#ff9800"
+                android:background="#7a1c22"
                 android:gravity="center">
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/careerPathCard"
-                    android:layout_width="170dp"
+                    android:layout_width="175dp"
                     android:layout_height="135dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="5dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:clickable="true"
                     app:cardBackgroundColor="#FCFBE3"
                     app:cardCornerRadius="5dp"
@@ -116,11 +116,11 @@
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/Cardconfused"
-                    android:layout_width="170dp"
+                    android:layout_width="175dp"
                     android:layout_height="135dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginRight="10dp"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:layout_toRightOf="@id/careerPathCard"
                     android:clickable="true"
                     app:cardBackgroundColor="#FCFBE3"
@@ -138,7 +138,7 @@
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/Cardfaq"
-                    android:layout_width="170dp"
+                    android:layout_width="177dp"
                     android:layout_height="135dp"
                     android:layout_below="@id/careerPathCard"
                     android:layout_marginLeft="10dp"
@@ -160,7 +160,7 @@
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/Cardvid"
-                    android:layout_width="170dp"
+                    android:layout_width="175dp"
                     android:layout_height="135dp"
                     android:layout_below="@id/Cardconfused"
                     android:layout_marginLeft="2dp"

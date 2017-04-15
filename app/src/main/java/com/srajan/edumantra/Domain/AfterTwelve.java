@@ -1,13 +1,12 @@
 package com.srajan.edumantra.Domain;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
- * Created by rajan on 12/4/17.
+ * Created by rajan on 14/4/17.
  */
 
-public class AfterTen  {
+public class AfterTwelve {
 
     private String id;
     private List<String> mainCourseName = null;
@@ -27,4 +26,5 @@ public class AfterTen  {
     public void setMainCourseName(List<String> mainCourseName) {
         this.mainCourseName = mainCourseName;
     }
+
 }

@@ -30,10 +30,12 @@
                 android:layout_marginTop="7dp"
                 android:layout_marginLeft="8dp"
                 android:hint="@string/password"
-                android:paddingLeft="10dp"
+               android:textColorHint="#ffffff"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/uname" />
+                app:layout_constraintTop_toBottomOf="@+id/uname"
+                android:drawableLeft="@drawable/ic_lockedc"
+                android:drawablePadding="5dp"/>
 
 
             <Button
@@ -47,6 +49,7 @@
                 android:layout_marginTop="7dp"
                 android:background="#50b0ab"
                 android:text="Sign In"
+                android:textColor="#ffffff"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/passw" />
@@ -77,11 +80,14 @@
                 android:layout_marginTop="118dp"
                 android:maxLines="1"
                 android:hint="@string/user"
-                android:paddingLeft="10dp"
+                android:drawablePadding="5dp"
                 app:layout_constraintHorizontal_bias="0.714"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:drawableLeft="@drawable/ic_userc"
+                android:textColorHint="#ffffff"
+                />
 
             <!--<Button-->
             <!--android:layout_width="130dp"-->
@@ -109,7 +115,9 @@
                 app:layout_constraintLeft_toLeftOf="@+id/btnsign"
                 app:layout_constraintRight_toRightOf="@+id/btnsign"
                 app:layout_constraintTop_toBottomOf="@+id/btnsign"
-                app:layout_constraintVertical_bias="0.066" />
+                app:layout_constraintVertical_bias="0.066"
+                android:textColor="#ffffff"
+                />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>

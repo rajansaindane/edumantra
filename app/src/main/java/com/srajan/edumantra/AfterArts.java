@@ -68,14 +68,12 @@ public class AfterArts extends AppCompatActivity {
 
 
         builder.show();
-        imageView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               Uri uri= Uri.parse("http://www.srajan.in");
-                Intent intent=new Intent(Intent.ACTION_VIEW,uri);
-                startActivity(intent);
-            }
-        });
+        imageView.setOnClickListener(this::openAdvertise);
+//        imageView.setOnClickListener(view -> {
+//           Uri uri= Uri.parse("http://www.srajan.in");
+//            Intent intent=new Intent(Intent.ACTION_VIEW,uri);
+//            startActivity(intent);
+//        });
 
         final Handler handler  = new Handler();
         final Runnable runnable = new Runnable() {
@@ -95,6 +93,12 @@ public class AfterArts extends AppCompatActivity {
         });
 
         handler.postDelayed(runnable, 5000);
+    }
+
+    private void openAdvertise(View view) {
+        Uri uri= Uri.parse("http://www.srajan.in");
+        Intent intent=new Intent(Intent.ACTION_VIEW,uri);
+        startActivity(intent);
     }
 
 }

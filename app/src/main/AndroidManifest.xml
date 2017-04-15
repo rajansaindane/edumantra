@@ -15,7 +15,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ScienceAfterTen" />
         <activity
             android:name=".CareerPath"
             android:label="Career Path"
@@ -59,6 +58,11 @@
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".FAQ" />
+        <activity android:name=".MainCourses.Common" />
+        <activity android:name=".MainCourses.AfterTwelveList" />
+        <activity android:name=".CoursesAfterTen.CoursesAfterElevenList" />
+        <activity android:name=".CoursesAfterTen.CoursesAfterITIList" />
+        <activity android:name=".CoursesAfterTen.CoursesAfterDiplomaList"></activity>
     </application>
 
 </manifest>

@@ -1,10 +1,11 @@
 package com.srajan.edumantra.Domain;
 
 /**
- * Created by rajan on 6/4/17.
+ * Created by rajan on 14/4/17.
  */
 
-public class GetSignUpInfo {
+public class GetSignUpInfo
+{
 
     int id;
     String  name;
