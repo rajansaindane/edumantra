@@ -179,7 +179,10 @@ public class HomeScreen extends AppCompatActivity {
         }
         if (item.getItemId()==R.id.actionart)
         {
-            Toast.makeText(this,"hiii",Toast.LENGTH_SHORT).show();
+
+            Intent intent=new Intent(HomeScreen.this,Articales.class);
+            startActivity(intent);
+
         }
 
         if (item.getItemId()==R.id.actionabt)

@@ -12,17 +12,18 @@ import com.srajan.edumantra.R;
 import java.util.List;
 
 /**
- * Created by rajan on 14/4/17.
+ * Created by rajan on 17/4/17.
  */
 
-public class CustomListAdapterCITI extends BaseAdapter {
+public class CustomerListAdapterPcb extends BaseAdapter
+{
 
-    private Context coursesAfterITIList;
+    private Context coursesInPcb;
     private List<String> jokes;
     private LayoutInflater inflator;
 
-    public CustomListAdapterCITI(Context coursesAfterITIList, List<String> jokes) {
-        this.coursesAfterITIList = coursesAfterITIList;
+    public CustomerListAdapterPcb(Context coursesInPcb, List<String> jokes) {
+        this.coursesInPcb = coursesInPcb;
         this.jokes = jokes;
     }
 
@@ -44,7 +45,7 @@ public class CustomListAdapterCITI extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        LayoutInflater inflator = (LayoutInflater) coursesAfterITIList.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflator = (LayoutInflater) coursesInPcb.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View view = null;
         if (convertView == null)
@@ -58,5 +59,7 @@ public class CustomListAdapterCITI extends BaseAdapter {
         return view;
 
     }
+
+
 
 }

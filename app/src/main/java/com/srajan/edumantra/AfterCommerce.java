@@ -18,8 +18,11 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.srajan.edumantra.Commerce.CoursesAfterTenCommerece;
+
 public class AfterCommerce extends AppCompatActivity {
 
+    ImageView afterTen,afterTwelve;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +30,16 @@ public class AfterCommerce extends AppCompatActivity {
         showImage();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        afterTen=(ImageView)findViewById(R.id.imgaftertensci);
+        afterTen.setOnClickListener(this::openTen);
     }
+
+    private void openTen(View view) {
+
+        Intent intent=new Intent(AfterCommerce.this, CoursesAfterTenCommerece.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId()==android.R.id.home)

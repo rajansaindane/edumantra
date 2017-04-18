@@ -1,4 +1,4 @@
-package com.srajan.edumantra.CoursesAfterTen;
+package com.srajan.edumantra.CoursesAfterTwelve;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,54 +13,51 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
-import com.srajan.edumantra.Adapter.CustomListAdapterCITI;
-import com.srajan.edumantra.Adapter.CustomListAdapterCTS;
-import com.srajan.edumantra.Adapter.CustomListAdapterDesign;
-import com.srajan.edumantra.Adapter.CustomListAdapterDiploma;
-import com.srajan.edumantra.Adapter.CustomlistAdapter;
-import com.srajan.edumantra.Domain.AfterTen;
-import com.srajan.edumantra.Domain.AfterTenInfo;
-import com.srajan.edumantra.Domain.CoursesAfterTen;
+import com.srajan.edumantra.Adapter.CustomListAdapterPcm;
+import com.srajan.edumantra.Adapter.CustomListAdapterPcmb;
+import com.srajan.edumantra.Adapter.CustomerListAdapterPcb;
+import com.srajan.edumantra.AfterArts;
+import com.srajan.edumantra.Domain.CoursesAfterTwelve;
 import com.srajan.edumantra.HomeScreen;
 import com.srajan.edumantra.MainCourses.AfterTwelveList;
-import com.srajan.edumantra.MainCourses.Common;
 import com.srajan.edumantra.R;
 import com.srajan.edumantra.RequestQueue.WebService;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CoursesAfterElevenList extends AppCompatActivity {
+public class CoursesInPcb extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_courses_after_ten_list);
+        setContentView(R.layout.activity_courses_in_pcb);
+       // get();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        Intent subintent = getIntent();
-        int i = subintent.getIntExtra("srajan", 0);
-
-        if (i == 1) {
-            get();
-        }
-        if (i == 2) {
+        Intent subintent=getIntent();
+        int i=subintent.getIntExtra("srajan",0);
+        if(i==1)
+        {
             get1();
         }
-        if (i == 3) {
+        if (i==2)
+        {
+            get();
+        }
+        if(i==3)
+        {
             get2();
         }
-        if (i == 4) {
+        if(i==4)
+        {
             get3();
-        }
-        if (i == 5) {
-            get4();
         }
     }
 
-    private void get() {
+    private void get3() {
 
 
-        String url = "http://192.168.2.5:7878/mahacareer/coursesafterten/58f0817cd3e2433a0c522b4d";
+        String url = "http://192.168.0.242:7878/mahacareer/coursesaftertwelve/58f1c6edf1233c4f93e61995";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -72,9 +67,9 @@ public class CoursesAfterElevenList extends AppCompatActivity {
 
                         Log.i("@srajan", "json" + s);
                         Gson gson = new Gson();
-                        CoursesAfterTen coursesAfterTen = gson.fromJson(s, CoursesAfterTen.class);
-                        Log.i("@srajan", String.valueOf(coursesAfterTen));
-                        updatejoke(coursesAfterTen);
+                        CoursesAfterTwelve coursesAfterTwelve = gson.fromJson(s, CoursesAfterTwelve.class);
+                        Log.i("@srajan", String.valueOf(coursesAfterTwelve));
+                        updatejoke3(coursesAfterTwelve);
 
 
                     }
@@ -89,19 +84,132 @@ public class CoursesAfterElevenList extends AppCompatActivity {
     }
 
 
-    private void updatejoke(CoursesAfterTen elevenTwelve) {
+    private void updatejoke3(CoursesAfterTwelve dEd) {
 
         List<String> jokes = new ArrayList<>();
 //        ArrayList<String> jokes = new ArrayList<>();
 
         //  for (String coursesAfterTen : elevenTwelve.getElevenTwelve()) {
-        jokes.addAll(elevenTwelve.getElevenTwelve());
+        jokes.addAll(dEd.getdEd());
 
 
         Log.i("@srajan", "arr" + jokes);
-        CustomListAdapterCTS adapter = new CustomListAdapterCTS(this, jokes);
+        CustomListAdapterPcmb adapter = new CustomListAdapterPcmb(this, jokes);
 ////        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, jokes);
-        ListView list = ((ListView) findViewById(R.id.listCAT));
+        ListView list = ((ListView) findViewById(R.id.listpcb));
+        list.setAdapter(adapter);
+
+//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                if (position == 0) {
+//                    Intent intent = new Intent(CoursesAfterElevenList.this, HomeScreen.class);
+//                    startActivity(intent);
+//                }
+//            }
+//        });
+    }
+
+    private void get2() {
+
+        String url = "http://192.168.0.242:7878/mahacareer/coursesaftertwelve/58f1c6c3f1233c4f93e61994";
+
+
+        WebService.q(this).add(new StringRequest(url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String s) {
+
+                        Log.i("@srajan", "json" + s);
+                        Gson gson = new Gson();
+                        CoursesAfterTwelve coursesAfterTwelve = gson.fromJson(s, CoursesAfterTwelve.class);
+                        Log.i("@srajan", String.valueOf(coursesAfterTwelve));
+                        updatejoke2(coursesAfterTwelve);
+
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Log.i("@srajan", "Error" + error);
+            }
+        }));
+
+    }
+
+
+    private void updatejoke2(CoursesAfterTwelve pcmb) {
+
+        List<String> jokes = new ArrayList<>();
+//        ArrayList<String> jokes = new ArrayList<>();
+
+        //  for (String coursesAfterTen : elevenTwelve.getElevenTwelve()) {
+        jokes.addAll(pcmb.getPcmb());
+
+
+        Log.i("@srajan", "arr" + jokes);
+        CustomListAdapterPcmb adapter = new CustomListAdapterPcmb(this, jokes);
+////        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, jokes);
+        ListView list = ((ListView) findViewById(R.id.listpcb));
+        list.setAdapter(adapter);
+
+//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                if (position == 0) {
+//                    Intent intent = new Intent(CoursesAfterElevenList.this, HomeScreen.class);
+//                    startActivity(intent);
+//                }
+//            }
+//        });
+
+
+    }
+
+    private void get() {
+
+
+        String url = "http://192.168.0.242:7878/mahacareer/coursesaftertwelve/58f1c696f1233c4f93e61993";
+
+
+        WebService.q(this).add(new StringRequest(url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String s) {
+
+                        Log.i("@srajan", "json" + s);
+                        Gson gson = new Gson();
+                        CoursesAfterTwelve coursesAfterTwelve = gson.fromJson(s, CoursesAfterTwelve.class);
+                        Log.i("@srajan", String.valueOf(coursesAfterTwelve));
+                        updatejoke(coursesAfterTwelve);
+
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Log.i("@srajan", "Error" + error);
+            }
+        }));
+
+    }
+
+
+    private void updatejoke(CoursesAfterTwelve pcb) {
+
+        List<String> jokes = new ArrayList<>();
+//        ArrayList<String> jokes = new ArrayList<>();
+
+        //  for (String coursesAfterTen : elevenTwelve.getElevenTwelve()) {
+        jokes.addAll(pcb.getPcb());
+
+
+        Log.i("@srajan", "arr" + jokes);
+        CustomerListAdapterPcb adapter = new CustomerListAdapterPcb(this, jokes);
+////        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, jokes);
+        ListView list = ((ListView) findViewById(R.id.listpcb));
         list.setAdapter(adapter);
 
 //        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -120,7 +228,7 @@ public class CoursesAfterElevenList extends AppCompatActivity {
     private void get1() {
 
 
-        String url = "http://192.168.2.5:7878/mahacareer/coursesafterten/58f0819dd3e2433a0c522b4e";
+        String url = "http://192.168.0.242:7878/mahacareer/coursesaftertwelve/58f1c669f1233c4f93e61992";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -130,9 +238,9 @@ public class CoursesAfterElevenList extends AppCompatActivity {
 
                         Log.i("@srajan", "json" + s);
                         Gson gson = new Gson();
-                        CoursesAfterTen coursesAfterTen = gson.fromJson(s, CoursesAfterTen.class);
-                        Log.i("@srajan", String.valueOf(coursesAfterTen));
-                        updatejoke1(coursesAfterTen);
+                        CoursesAfterTwelve coursesAfterTwelve = gson.fromJson(s, CoursesAfterTwelve.class);
+                        Log.i("@srajan", String.valueOf(coursesAfterTwelve));
+                        updatejoke1(coursesAfterTwelve);
 
 
                     }
@@ -147,19 +255,19 @@ public class CoursesAfterElevenList extends AppCompatActivity {
     }
 
 
-    private void updatejoke1(CoursesAfterTen iti) {
+    private void updatejoke1(CoursesAfterTwelve pcm) {
 
         List<String> jokes = new ArrayList<>();
 //        ArrayList<String> jokes = new ArrayList<>();
 
         //  for (String coursesAfterTen : elevenTwelve.getElevenTwelve()) {
-        jokes.addAll(iti.getIti());
+        jokes.addAll(pcm.getPcm());
 
 
         Log.i("@srajan", "arr" + jokes);
-        CustomListAdapterCITI adapter = new CustomListAdapterCITI(this, jokes);
+        CustomListAdapterPcm adapter = new CustomListAdapterPcm(this, jokes);
 ////        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, jokes);
-        ListView list = ((ListView) findViewById(R.id.listCAT));
+        ListView list = ((ListView) findViewById(R.id.listpcb));
         list.setAdapter(adapter);
 
 //        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -175,181 +283,6 @@ public class CoursesAfterElevenList extends AppCompatActivity {
 
     }
 
-
-    private void get2() {
-
-
-        String url = "http://192.168.2.5:7878/mahacareer/coursesafterten/58f081b9d3e2433a0c522b4f";
-
-
-        WebService.q(this).add(new StringRequest(url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String s) {
-
-                        Log.i("@srajan", "json" + s);
-                        Gson gson = new Gson();
-                        CoursesAfterTen coursesAfterTen = gson.fromJson(s, CoursesAfterTen.class);
-                        Log.i("@srajan", String.valueOf(coursesAfterTen));
-                        updatejoke2(coursesAfterTen);
-
-
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-                Log.i("@srajan", "Error" + error);
-            }
-        }));
-
-    }
-
-
-    private void updatejoke2(CoursesAfterTen diploma) {
-
-        List<String> jokes = new ArrayList<>();
-//        ArrayList<String> jokes = new ArrayList<>();
-
-        //  for (String coursesAfterTen : elevenTwelve.getElevenTwelve()) {
-        jokes.addAll(diploma.getDiploma());
-
-
-        Log.i("@srajan", "arr" + jokes);
-        CustomListAdapterDiploma adapter = new CustomListAdapterDiploma(this, jokes);
-////        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, jokes);
-        ListView list = ((ListView) findViewById(R.id.listCAT));
-        list.setAdapter(adapter);
-
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (position == 0) {
-//                    Intent intent = new Intent(CoursesAfterElevenList.this, HomeScreen.class);
-//                    startActivity(intent);
-//                }
-//            }
-//        });
-
-
-    }
-
-
-    private void get3() {
-
-
-        String url = "http://192.168.2.5:7878/mahacareer/coursesafterten/58f081d4d3e2433a0c522b50";
-
-
-        WebService.q(this).add(new StringRequest(url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String s) {
-
-                        Log.i("@srajan", "json" + s);
-                        Gson gson = new Gson();
-                        CoursesAfterTen coursesAfterTen = gson.fromJson(s, CoursesAfterTen.class);
-                        Log.i("@srajan", String.valueOf(coursesAfterTen));
-                        updatejoke3(coursesAfterTen);
-
-
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-                Log.i("@srajan", "Error" + error);
-            }
-        }));
-
-    }
-
-
-    private void updatejoke3(CoursesAfterTen designing) {
-
-        List<String> jokes = new ArrayList<>();
-//        ArrayList<String> jokes = new ArrayList<>();
-
-        //  for (String coursesAfterTen : elevenTwelve.getElevenTwelve()) {
-        jokes.addAll(designing.getDesigning());
-
-
-        Log.i("@srajan", "arr" + jokes);
-        CustomListAdapterDesign adapter = new CustomListAdapterDesign(this, jokes);
-////        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, jokes);
-        ListView list = ((ListView) findViewById(R.id.listCAT));
-        list.setAdapter(adapter);
-
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (position == 0) {
-//                    Intent intent = new Intent(CoursesAfterElevenList.this, HomeScreen.class);
-//                    startActivity(intent);
-//                }
-//            }
-//        });
-
-
-    }
-
-    private void get4() {
-
-
-        String url = "http://192.168.2.5:7878/mahacareer/coursesafterten/58f081fbd3e2433a0c522b51";
-
-
-        WebService.q(this).add(new StringRequest(url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String s) {
-
-                        Log.i("@srajan", "json" + s);
-                        Gson gson = new Gson();
-                        CoursesAfterTen coursesAfterTen = gson.fromJson(s, CoursesAfterTen.class);
-                        Log.i("@srajan", String.valueOf(coursesAfterTen));
-                        updatejoke4(coursesAfterTen);
-
-
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-
-                Log.i("@srajan", "Error" + error);
-            }
-        }));
-
-    }
-
-
-    private void updatejoke4(CoursesAfterTen animation) {
-
-        List<String> jokes = new ArrayList<>();
-//        ArrayList<String> jokes = new ArrayList<>();
-
-        //  for (String coursesAfterTen : elevenTwelve.getElevenTwelve()) {
-        jokes.addAll(animation.getAnimation());
-
-
-        Log.i("@srajan", "arr" + jokes);
-        CustomListAdapterDesign adapter = new CustomListAdapterDesign(this, jokes);
-////        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, jokes);
-        ListView list = ((ListView) findViewById(R.id.listCAT));
-        list.setAdapter(adapter);
-
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (position == 0) {
-//                    Intent intent = new Intent(CoursesAfterElevenList.this, HomeScreen.class);
-//                    startActivity(intent);
-//                }
-//            }
-//        });
-
-
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -357,10 +290,10 @@ public class CoursesAfterElevenList extends AppCompatActivity {
             finish();
         if(item.getItemId()== R.id.actionHome)
         {
-            Intent intent=new Intent(CoursesAfterElevenList.this,HomeScreen.class);
+            Intent intent=new Intent(CoursesInPcb.this,HomeScreen.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
-            CoursesAfterElevenList.this.finish();
+            CoursesInPcb.this.finish();
         }
 
         if(item.getItemId()==R.id.action_Artical)
@@ -378,4 +311,5 @@ public class CoursesAfterElevenList extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.main,menu);
         return true;
     }
+
 }

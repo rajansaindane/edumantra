@@ -7,7 +7,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.srajan.edumantra.CoursesAfterTen.CoursesAfterITIList;
 import com.srajan.edumantra.R;
 
 import java.util.List;

@@ -7,22 +7,24 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import com.srajan.edumantra.MainCourses.Common;
 import com.srajan.edumantra.R;
 
 import java.util.List;
 
 /**
- * Created by rajan on 14/4/17.
+ * Created by rajan on 18/4/17.
  */
 
-public class CustomListAdapterCITI extends BaseAdapter {
+public class CustomListAdapterArtsTen extends BaseAdapter {
 
-    private Context coursesAfterITIList;
+    private Context coursesAfterTenArts;
     private List<String> jokes;
     private LayoutInflater inflator;
 
-    public CustomListAdapterCITI(Context coursesAfterITIList, List<String> jokes) {
-        this.coursesAfterITIList = coursesAfterITIList;
+
+    public CustomListAdapterArtsTen(Context coursesAfterTenArts, List<String> jokes) {
+        this.coursesAfterTenArts = coursesAfterTenArts;
         this.jokes = jokes;
     }
 
@@ -44,7 +46,7 @@ public class CustomListAdapterCITI extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        LayoutInflater inflator = (LayoutInflater) coursesAfterITIList.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflator = (LayoutInflater) coursesAfterTenArts.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View view = null;
         if (convertView == null)

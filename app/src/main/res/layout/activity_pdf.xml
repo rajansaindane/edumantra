@@ -4,15 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.srajan.edumantra.CoursesAfterTwelve.CoursesInPcm"
-    android:background="#66a1cc">
+    tools:context="com.srajan.edumantra.Pdf">
 
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/listpcm"
-        android:padding="15dp">
+<com.github.barteksc.pdfviewer.PDFView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/webpdf">
 
-    </ListView>
+</com.github.barteksc.pdfviewer.PDFView>
 
 </LinearLayout>

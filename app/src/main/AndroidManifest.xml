@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -61,9 +62,12 @@
         <activity android:name=".MainCourses.Common" />
         <activity android:name=".MainCourses.AfterTwelveList" />
         <activity android:name=".CoursesAfterTen.CoursesAfterElevenList" />
-        <activity android:name=".CoursesAfterTen.CoursesAfterITIList" />
-        <activity android:name=".CoursesAfterTen.CoursesAfterDiplomaList" />
-        <activity android:name=".CoursesAfterTwelve.CoursesInPcm"></activity>
+        <activity android:name=".Articales" />
+        <activity android:name=".Pdf" />
+        <activity android:name=".CoursesAfterTwelve.CoursesInPcb" />
+        <activity android:name=".Adapter.Arts.CoursesAfterArtsList" />
+        <activity android:name=".Arts.CoursesAfterTenArts" />
+        <activity android:name=".Commerce.CoursesAfterTenCommerece"></activity>
     </application>
 
 </manifest>

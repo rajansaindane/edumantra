@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.srajan.edumantra.CoursesAfterTwelve.CoursesInPcm"
-    android:background="#66a1cc">
+    tools:context="com.srajan.edumantra.CoursesAfterTwelve.CoursesInPcmb">
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/listpcm"
+        android:id="@+id/listpcmb"
         android:padding="15dp">
 
     </ListView>

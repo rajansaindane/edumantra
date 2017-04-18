@@ -1,4 +1,4 @@
-package com.srajan.edumantra.MainCourses;
+package com.srajan.edumantra.Commerce;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,18 +6,16 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.Gson;
-import com.srajan.edumantra.Adapter.CustomlistAdapter;
-import com.srajan.edumantra.CoursesAfterTen.CoursesAfterElevenList;
+import com.srajan.edumantra.Adapter.CustomListAdapterArtsTen;
+import com.srajan.edumantra.Adapter.CustomListAdapterCommereceTen;
+import com.srajan.edumantra.CoursesAfterTwelve.CoursesInPcb;
 import com.srajan.edumantra.Domain.AfterTen;
 import com.srajan.edumantra.Domain.AfterTenInfo;
 import com.srajan.edumantra.HomeScreen;
@@ -27,18 +25,15 @@ import com.srajan.edumantra.RequestQueue.WebService;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Common extends AppCompatActivity {
-
-    TextView text;
+public class CoursesAfterTenCommerece extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_common);
+        setContentView(R.layout.activity_courses_after_ten_commerece);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         get();
     }
-
     private void get() {
 
 
@@ -69,71 +64,32 @@ public class Common extends AppCompatActivity {
     }
 
 
-    private void updatejoke(AfterTenInfo afterTenScience) {
+    private void updatejoke(AfterTenInfo afterTenCommerece) {
 
         List<String> jokes = new ArrayList<>();
 //        ArrayList<String> jokes = new ArrayList<>();
 
-        for (AfterTen after : afterTenScience.getAfterten()) {
-            jokes.addAll(after.getAfterTenScience());
+        for (AfterTen after : afterTenCommerece.getAfterten()) {
+            jokes.addAll(after.getAfterTenCommerce());
         }
 
 
         Log.i("@srajan", "arr" + jokes);
-        CustomlistAdapter adapter = new CustomlistAdapter(this, jokes);
+        CustomListAdapterCommereceTen adapter = new CustomListAdapterCommereceTen(this, jokes);
 ////        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, jokes);
-        ListView list = ((ListView) findViewById(R.id.listview));
+        ListView list = ((ListView) findViewById(R.id.listCommerece));
         list.setAdapter(adapter);
-
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position == 0) {
-                    Intent intent = new Intent(Common.this, CoursesAfterElevenList.class);
-                    intent.putExtra("srajan",1);
-                    startActivity(intent);
-                }
-                if (position==1)
-                {
-                    Intent intent = new Intent(Common.this, CoursesAfterElevenList.class);
-                    intent.putExtra("srajan",2);
-                    startActivity(intent);
-                }
-                if (position==2)
-                {
-                    Intent intent = new Intent(Common.this, CoursesAfterElevenList.class);
-                    intent.putExtra("srajan",3);
-                    startActivity(intent);
-                }
-                if (position==3)
-                {
-                    Intent intent = new Intent(Common.this, CoursesAfterElevenList.class);
-                    intent.putExtra("srajan",4);
-                    startActivity(intent);
-                }
-                if (position==4)
-                {
-                    Intent intent = new Intent(Common.this, CoursesAfterElevenList.class);
-                    intent.putExtra("srajan",5);
-                    startActivity(intent);
-                }
-            }
-        });
-
-
     }
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId()==android.R.id.home)
             finish();
         if(item.getItemId()== R.id.actionHome)
         {
-            Intent intent=new Intent(Common.this,HomeScreen.class);
+            Intent intent=new Intent(CoursesAfterTenCommerece.this,HomeScreen.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
-            Common.this.finish();
+            CoursesAfterTenCommerece.this.finish();
         }
 
         if(item.getItemId()==R.id.action_Artical)

@@ -12,6 +12,9 @@ public class CoursesAfterTen
     private String id;
     private List<String> elevenTwelve;
     private List<String> iti;
+    private List<String> diploma;
+    private List<String> designing;
+    private List<String> animation;
 
     public String getId() {
         return id;
@@ -35,5 +38,29 @@ public class CoursesAfterTen
 
     public void setIti(List<String> iti) {
         this.iti = iti;
+    }
+
+    public List<String> getDiploma() {
+        return diploma;
+    }
+
+    public void setDiploma(List<String> diploma) {
+        this.diploma = diploma;
+    }
+
+    public List<String> getDesigning() {
+        return designing;
+    }
+
+    public void setDesigning(List<String> designing) {
+        this.designing = designing;
+    }
+
+    public List<String> getAnimation() {
+        return animation;
+    }
+
+    public void setAnimation(List<String> animation) {
+        this.animation = animation;
     }
 }
