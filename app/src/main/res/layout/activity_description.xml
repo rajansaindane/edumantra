@@ -4,18 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.srajan.edumantra.MainCourses.AfterTwelveList"
+    tools:context="com.srajan.edumantra.Descriptions.DescriptionActivity"
     android:background="#66a1cc"
+
     >
 
-    <ListView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/twelvelist"
+        android:id="@+id/txtdescription"
         android:padding="15dp"
-        android:background="#66a1cc"
-        >
+        android:layout_margin="15dp"
+        android:textColor="#ffffff"/>
 
-    </ListView>
 
 </LinearLayout>

@@ -47,7 +47,7 @@ public class FAQ extends AppCompatActivity {
 
         if(item.getItemId()== R.id.actionHome)
         {
-            Intent intent=new Intent(FAQ.this,HomeScreen.class);
+            Intent intent=new Intent(FAQ.this,NavigationHome.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             FAQ.this.finish();

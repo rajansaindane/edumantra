@@ -20,6 +20,7 @@ import com.srajan.edumantra.AfterArts;
 import com.srajan.edumantra.Domain.CoursesAfterTwelve;
 import com.srajan.edumantra.HomeScreen;
 import com.srajan.edumantra.MainCourses.AfterTwelveList;
+import com.srajan.edumantra.NavigationHome;
 import com.srajan.edumantra.R;
 import com.srajan.edumantra.RequestQueue.WebService;
 
@@ -52,12 +53,15 @@ public class CoursesInPcb extends AppCompatActivity {
         {
             get3();
         }
+
     }
+
+
 
     private void get3() {
 
 
-        String url = "http://192.168.0.242:7878/mahacareer/coursesaftertwelve/58f1c6edf1233c4f93e61995";
+        String url = "http://192.168.2.5:8787/mahacareer/coursesaftertwelve/58f1c6edf1233c4f93e61995";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -112,7 +116,7 @@ public class CoursesInPcb extends AppCompatActivity {
 
     private void get2() {
 
-        String url = "http://192.168.0.242:7878/mahacareer/coursesaftertwelve/58f1c6c3f1233c4f93e61994";
+        String url = "http://192.168.0.18:8787/mahacareer/coursesaftertwelve/58f1c6c3f1233c4f93e61994";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -170,7 +174,7 @@ public class CoursesInPcb extends AppCompatActivity {
     private void get() {
 
 
-        String url = "http://192.168.0.242:7878/mahacareer/coursesaftertwelve/58f1c696f1233c4f93e61993";
+        String url = "http://192.168.0.18:8787/mahacareer/coursesaftertwelve/58f1c696f1233c4f93e61993";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -228,7 +232,7 @@ public class CoursesInPcb extends AppCompatActivity {
     private void get1() {
 
 
-        String url = "http://192.168.0.242:7878/mahacareer/coursesaftertwelve/58f1c669f1233c4f93e61992";
+        String url = "http://192.168.0.18:8787/mahacareer/coursesaftertwelve/58f1c669f1233c4f93e61992";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -290,7 +294,7 @@ public class CoursesInPcb extends AppCompatActivity {
             finish();
         if(item.getItemId()== R.id.actionHome)
         {
-            Intent intent=new Intent(CoursesInPcb.this,HomeScreen.class);
+            Intent intent=new Intent(CoursesInPcb.this,NavigationHome.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             CoursesInPcb.this.finish();

@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.srajan.edumantra.MainCourses.AfterTwelveList"
-    android:background="#66a1cc"
-    >
+    tools:context="com.srajan.edumantra.Arts.CoursesAfterTwelveArts"
+    android:background="#66a1cc">
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/twelvelist"
+        android:id="@+id/listTwelveArts"
         android:padding="15dp"
-        android:background="#66a1cc"
+
         >
 
     </ListView>

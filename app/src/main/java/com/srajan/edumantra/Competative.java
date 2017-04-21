@@ -22,7 +22,7 @@ public class Competative extends AppCompatActivity {
 
         if(item.getItemId()== R.id.actionHome)
         {
-            Intent intent=new Intent(Competative.this,HomeScreen.class);
+            Intent intent=new Intent(Competative.this,NavigationHome.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             Competative.this.finish();

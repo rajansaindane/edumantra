@@ -18,6 +18,9 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
 import com.srajan.edumantra.Arts.CoursesAfterTenArts;
+import com.srajan.edumantra.Arts.CoursesAfterTwelveArts;
+import com.srajan.edumantra.CoursesAfterTwelve.CoursesInPcb;
+import com.srajan.edumantra.MainCourses.AfterTwelveList;
 
 public class AfterArts extends AppCompatActivity {
 
@@ -32,6 +35,13 @@ public class AfterArts extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         imageAfterTen=(ImageView)findViewById(R.id.imgaftertensci);
         imageAfterTen.setOnClickListener(this::openAfterTen);
+        imageAfterTwelve=(ImageView)findViewById(R.id.imageaftercommerece);
+        imageAfterTwelve.setOnClickListener(this::openAfterTwelve);
+    }
+
+    private void openAfterTwelve(View view) {
+        Intent intent=new Intent(AfterArts.this, CoursesAfterTwelveArts.class);
+        startActivity(intent);
     }
 
     private void openAfterTen(View view) {
@@ -46,7 +56,7 @@ public class AfterArts extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home)
             finish();
         if (item.getItemId() == R.id.action_settings) {
-            Intent intent = new Intent(AfterArts.this, HomeScreen.class);
+            Intent intent = new Intent(AfterArts.this, NavigationHome.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             AfterArts.this.finish();

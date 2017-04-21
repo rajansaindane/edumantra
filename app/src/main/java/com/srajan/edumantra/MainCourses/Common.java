@@ -21,6 +21,7 @@ import com.srajan.edumantra.CoursesAfterTen.CoursesAfterElevenList;
 import com.srajan.edumantra.Domain.AfterTen;
 import com.srajan.edumantra.Domain.AfterTenInfo;
 import com.srajan.edumantra.HomeScreen;
+import com.srajan.edumantra.NavigationHome;
 import com.srajan.edumantra.R;
 import com.srajan.edumantra.RequestQueue.WebService;
 
@@ -42,7 +43,7 @@ public class Common extends AppCompatActivity {
     private void get() {
 
 
-        String url = "http://192.168.2.5:7878/mahacareer/afterten/getListAfterTen";
+        String url = "http://192.168.0.18:8787/mahacareer/afterten/getListAfterTen";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -130,7 +131,7 @@ public class Common extends AppCompatActivity {
             finish();
         if(item.getItemId()== R.id.actionHome)
         {
-            Intent intent=new Intent(Common.this,HomeScreen.class);
+            Intent intent=new Intent(Common.this,NavigationHome.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             Common.this.finish();

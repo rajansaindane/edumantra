@@ -9,7 +9,10 @@ import java.util.List;
 public class AfterTwelve {
 
     private String id;
-    private List<String> mainCourseName = null;
+    private List<String> afterTwelveScience = null;
+    private List<String> afterTwelveArts = null;
+    private List<String> afterTwelveCommerce = null;
+
 
     public String getId() {
         return id;
@@ -19,12 +22,27 @@ public class AfterTwelve {
         this.id = id;
     }
 
-    public List<String> getMainCourseName() {
-        return mainCourseName;
+    public List<String> getAfterTwelveScience() {
+        return afterTwelveScience;
     }
 
-    public void setMainCourseName(List<String> mainCourseName) {
-        this.mainCourseName = mainCourseName;
+    public void setAfterTwelveScience(List<String> afterTwelveScience) {
+        this.afterTwelveScience = afterTwelveScience;
     }
 
+    public List<String> getAfterTwelveArts() {
+        return afterTwelveArts;
+    }
+
+    public void setAfterTwelveArts(List<String> afterTwelveArts) {
+        this.afterTwelveArts = afterTwelveArts;
+    }
+
+    public List<String> getAfterTwelveCommerce() {
+        return afterTwelveCommerce;
+    }
+
+    public void setAfterTwelveCommerce(List<String> afterTwelveCommerce) {
+        this.afterTwelveCommerce = afterTwelveCommerce;
+    }
 }

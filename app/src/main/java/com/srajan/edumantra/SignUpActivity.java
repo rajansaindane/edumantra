@@ -4,21 +4,27 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.srajan.edumantra.DBHelper.DataBaseSignUp;
 import com.srajan.edumantra.Domain.GetSignUpInfo;
+import com.srajan.edumantra.RequestQueue.WebService;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class SignUpActivity extends AppCompatActivity {
 
-    DataBaseSignUp db=new DataBaseSignUp(this);
+    DataBaseSignUp db = new DataBaseSignUp(this);
 
     EditText name, add, contact, qualification, email, username, password, cpassword;
     Button button;
-
 
 
     @Override
@@ -43,9 +49,9 @@ public class SignUpActivity extends AppCompatActivity {
         String cpass = cpassword.getText().toString();
         String em = email.getText().toString();
         String nam = name.getText().toString();
-        String address=add.getText().toString();
-        String cont=contact.getText().toString();
-        String qulify=qualification.getText().toString();
+        String address = add.getText().toString();
+        String cont = contact.getText().toString();
+        String qulify = qualification.getText().toString();
 
 
     }
@@ -58,43 +64,43 @@ public class SignUpActivity extends AppCompatActivity {
         String cpass = cpassword.getText().toString();
         String em = email.getText().toString();
         String nam = name.getText().toString();
-        String address=add.getText().toString();
-        String cont=contact.getText().toString();
-        String qulify=qualification.getText().toString();
+        String address = add.getText().toString();
+        String cont = contact.getText().toString();
+        String qulify = qualification.getText().toString();
 
-        String pattern="^(([^<>()\\[\\]\\\\.,;:\\s@\"]+" +
+        String pattern = "^(([^<>()\\[\\]\\\\.,;:\\s@\"]+" +
                 "(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\." +
                 "[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
 
 
 //        if (user.isEmpty() || pass.isEmpty() || em.isEmpty() || nam.isEmpty()) {
 
-            if (em.isEmpty()) {
-                Toast.makeText(this, "email can not be empty", Toast.LENGTH_SHORT).show();
-            } else if (!em.matches(pattern)) {
+        if (em.isEmpty()) {
+            Toast.makeText(this, "email can not be empty", Toast.LENGTH_SHORT).show();
+        } else if (!em.matches(pattern)) {
 
-                Toast.makeText(this, "Invalid email", Toast.LENGTH_SHORT).show();
-                email.setError("Invalid Email");
-            }  else if (username.getText().toString().length() == 0) {
+            Toast.makeText(this, "Invalid email", Toast.LENGTH_SHORT).show();
+            email.setError("Invalid Email");
+        } else if (username.getText().toString().length() == 0) {
 
-                Toast.makeText(this, "username can not be empty", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "username can not be empty", Toast.LENGTH_SHORT).show();
 
-            } else if (nam.isEmpty()) {
-                Toast.makeText(this, "name can not be empty", Toast.LENGTH_SHORT).show();
-            } else if (pass.isEmpty()) {
-                Toast.makeText(this, "password can not be empty", Toast.LENGTH_SHORT).show();
-            } else if (cpass.isEmpty()) {
-                Toast.makeText(this, "password can not be empty", Toast.LENGTH_SHORT).show();
-            }
+        } else if (nam.isEmpty()) {
+            Toast.makeText(this, "name can not be empty", Toast.LENGTH_SHORT).show();
+        } else if (pass.isEmpty()) {
+            Toast.makeText(this, "password can not be empty", Toast.LENGTH_SHORT).show();
+        } else if (cpass.isEmpty()) {
+            Toast.makeText(this, "password can not be empty", Toast.LENGTH_SHORT).show();
+        }
 //            else if (em.matches(pattern))
 //            {
 //
 //                Toast.makeText(getApplicationContext(),"Invalid email address",Toast.LENGTH_SHORT).show();
 //            }
 
-            else if (!pass.equals(cpass)) {
-                Toast.makeText(SignUpActivity.this, "Password Do Not Match", Toast.LENGTH_SHORT).show();
-            }
+        else if (!pass.equals(cpass)) {
+            Toast.makeText(SignUpActivity.this, "Password Do Not Match", Toast.LENGTH_SHORT).show();
+        }
 //        else if (Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()) {
 //
 //            Toast.makeText(this, "Invalid Email", Toast.LENGTH_SHORT).show();
@@ -103,25 +109,66 @@ public class SignUpActivity extends AppCompatActivity {
 //        }
         else {
 
-                save();
-                Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
-                startActivity(intent);
+            save();
+            Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
+            startActivity(intent);
+            sendData();
 
 //                sendMail();
-                Toast.makeText(this, "Thank You,You Have Successfully Registered", Toast.LENGTH_SHORT).show();
-                SignUpActivity.this.finish();
+            Toast.makeText(this, "Thank You,You Have Successfully Registered", Toast.LENGTH_SHORT).show();
+            SignUpActivity.this.finish();
 
-            }
-
-
-
-
+        }
 
 
     }
 
-    private void sendMail()
-    {
+    private void sendData() {
+        String user = username.getText().toString();
+        String pass = password.getText().toString();
+        String cpass = cpassword.getText().toString();
+        String em = email.getText().toString();
+        String nam = name.getText().toString();
+        String address = add.getText().toString();
+        String cont = contact.getText().toString();
+        String qulify = qualification.getText().toString();
+
+
+        String url = "http://192.168.0.18:8787/mahacareer/user/userRegistration";
+
+        JSONObject obj = new JSONObject();
+        try {
+            obj.put("name", nam);
+            obj.put("emailId", em);
+            obj.put("userName", user);
+            obj.put("password", pass);
+            obj.put("confirmPassword", cpass);
+            obj.put("contactNumber", cont);
+            obj.put("address", address);
+            obj.put("qualification", qulify);
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        WebService.q(this).add(new JsonObjectRequest(url, obj,
+                this::onPostSuccess,
+                this::onPostError));
+    }
+
+    private void onPostSuccess(JSONObject jsonobject) {
+
+        Log.i("@srajan", "Response" + jsonobject.toString());
+
+    }
+
+    private void onPostError(VolleyError e) {
+
+        Log.i("@srajan", "Error" + e.toString());
+
+    }
+
+    private void sendMail() {
 
         String em = email.getText().toString();
 
@@ -141,7 +188,7 @@ public class SignUpActivity extends AppCompatActivity {
         email.putExtra(Intent.EXTRA_TEXT,
                 "name:" + name.getText().toString() + '\n' + "address:" + add.getText().toString() +
                         '\n' + "phone:" + contact.getText().toString() +
-                        '\n' + '\n' + em + '\n' + "qualification :"+ qualification.getText().toString() + '\n' +
+                        '\n' + '\n' + em + '\n' + "qualification :" + qualification.getText().toString() + '\n' +
                         '\n' + "Student Data");
 
         try {
@@ -155,19 +202,18 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
-    private void save()
-    {
+    private void save() {
 
         String user = username.getText().toString();
         String pass = password.getText().toString();
         String cpass = cpassword.getText().toString();
         String em = email.getText().toString();
         String nam = name.getText().toString();
-        String address=add.getText().toString();
-        String cont=contact.getText().toString();
-        String qulify=qualification.getText().toString();
+        String address = add.getText().toString();
+        String cont = contact.getText().toString();
+        String qulify = qualification.getText().toString();
 
-        GetSignUpInfo c=new GetSignUpInfo();
+        GetSignUpInfo c = new GetSignUpInfo();
         c.setName(nam);
         c.setAdd(address);
         c.setContact(cont);
@@ -181,4 +227,4 @@ public class SignUpActivity extends AppCompatActivity {
 
     }
 
-    }
+}

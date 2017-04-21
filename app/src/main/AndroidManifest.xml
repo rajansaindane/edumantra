@@ -56,7 +56,6 @@
             </intent-filter>
             >
         </activity>
-        <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".FAQ" />
         <activity android:name=".MainCourses.Common" />
@@ -67,7 +66,14 @@
         <activity android:name=".CoursesAfterTwelve.CoursesInPcb" />
         <activity android:name=".Adapter.Arts.CoursesAfterArtsList" />
         <activity android:name=".Arts.CoursesAfterTenArts" />
-        <activity android:name=".Commerce.CoursesAfterTenCommerece"></activity>
+        <activity android:name=".Commerce.CoursesAfterTenCommerece" />
+        <activity android:name=".Arts.CoursesAfterTwelveArts" />
+        <activity android:name=".Commerce.CourseAfterTwelveCommerece" />
+        <activity
+            android:name=".NavigationHome"
+            android:label="@string/title_activity_navigation_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Descriptions.DescriptionActivity"></activity>
     </application>
 
 </manifest>

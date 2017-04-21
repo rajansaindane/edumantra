@@ -32,7 +32,7 @@ public class Confused extends AppCompatActivity {
             finish();
         if(item.getItemId()== R.id.actionHome)
         {
-            Intent intent=new Intent(Confused.this,HomeScreen.class);
+            Intent intent=new Intent(Confused.this,NavigationHome.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             Confused.this.finish();

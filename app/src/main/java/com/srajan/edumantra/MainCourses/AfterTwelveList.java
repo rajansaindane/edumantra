@@ -21,6 +21,7 @@ import com.srajan.edumantra.CoursesAfterTwelve.CoursesInPcb;
 import com.srajan.edumantra.Domain.AfterTwelve;
 import com.srajan.edumantra.Domain.AfterTwelveInfo;
 import com.srajan.edumantra.HomeScreen;
+import com.srajan.edumantra.NavigationHome;
 import com.srajan.edumantra.R;
 import com.srajan.edumantra.RequestQueue.WebService;
 
@@ -35,12 +36,20 @@ public class AfterTwelveList extends AppCompatActivity {
         setContentView(R.layout.activity_after_twelve_list);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         get();
+
     }
+
+
+
+
+
+
+
     private void get() {
 
 
 
-        String url = "http://192.168.2.5:7878/mahacareer/aftertwelve/getListAfterTwelve";
+        String url = "http://192.168.0.18:8787/mahacareer/aftertwelve/getListAfterTwelve";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -67,13 +76,13 @@ public class AfterTwelveList extends AppCompatActivity {
     }
 
 
-    private void updatejoke(AfterTwelveInfo mainCourseName) {
+    private void updatejoke(AfterTwelveInfo afterTwelveScience) {
 
         List<String> jokes = new ArrayList<>();
 //        ArrayList<String> jokes = new ArrayList<>();
 
-        for (AfterTwelve after : mainCourseName.getAftertwelve()) {
-            jokes.addAll(after.getMainCourseName());
+        for (AfterTwelve after : afterTwelveScience.getAftertwelve()) {
+            jokes.addAll(after.getAfterTwelveScience());
         }
 
         Log.i("@srajan", String.valueOf(jokes));
@@ -125,7 +134,7 @@ public class AfterTwelveList extends AppCompatActivity {
             finish();
         if(item.getItemId()== R.id.actionHome)
         {
-            Intent intent=new Intent(AfterTwelveList.this,HomeScreen.class);
+            Intent intent=new Intent(AfterTwelveList.this,NavigationHome.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             AfterTwelveList.this.finish();

@@ -70,7 +70,7 @@ public class Other extends AppCompatActivity {
             finish();
         if(item.getItemId()== R.id.actionHome)
         {
-            Intent intent=new Intent(Other.this,HomeScreen.class);
+            Intent intent=new Intent(Other.this,NavigationHome.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             Other.this.finish();

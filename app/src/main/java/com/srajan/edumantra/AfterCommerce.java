@@ -18,7 +18,9 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
+import com.srajan.edumantra.Commerce.CourseAfterTwelveCommerece;
 import com.srajan.edumantra.Commerce.CoursesAfterTenCommerece;
+import com.srajan.edumantra.MainCourses.AfterTwelveList;
 
 public class AfterCommerce extends AppCompatActivity {
 
@@ -32,6 +34,15 @@ public class AfterCommerce extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         afterTen=(ImageView)findViewById(R.id.imgaftertensci);
         afterTen.setOnClickListener(this::openTen);
+        afterTwelve=(ImageView)findViewById(R.id.imagecommerecetwelve);
+        afterTwelve.setOnClickListener(this::openTwelve);
+    }
+
+    private void openTwelve(View view) {
+
+        Intent intent=new Intent(AfterCommerce.this,CourseAfterTwelveCommerece.class);
+        startActivity(intent);
+
     }
 
     private void openTen(View view) {
@@ -46,7 +57,7 @@ public class AfterCommerce extends AppCompatActivity {
             finish();
         if(item.getItemId()== R.id.actionHome)
         {
-            Intent intent=new Intent(AfterCommerce.this,HomeScreen.class);
+            Intent intent=new Intent(AfterCommerce.this,NavigationHome.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             AfterCommerce.this.finish();

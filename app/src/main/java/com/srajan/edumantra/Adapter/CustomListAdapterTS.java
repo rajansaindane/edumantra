@@ -22,7 +22,7 @@ public class CustomListAdapterTS extends BaseAdapter{
     private List<String> jokes;
     private LayoutInflater inflator;
 
-    public CustomListAdapterTS(AfterTwelveList aftertwelvelist, List<String> jokes) {
+    public CustomListAdapterTS(Context aftertwelvelist, List<String> jokes) {
         this.aftertwelvelist = aftertwelvelist;
         this.jokes = jokes;
     }

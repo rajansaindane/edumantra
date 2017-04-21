@@ -20,12 +20,14 @@ import com.srajan.edumantra.Adapter.CustomListAdapterCTS;
 import com.srajan.edumantra.Adapter.CustomListAdapterDesign;
 import com.srajan.edumantra.Adapter.CustomListAdapterDiploma;
 import com.srajan.edumantra.Adapter.CustomlistAdapter;
+import com.srajan.edumantra.Descriptions.DescriptionActivity;
 import com.srajan.edumantra.Domain.AfterTen;
 import com.srajan.edumantra.Domain.AfterTenInfo;
 import com.srajan.edumantra.Domain.CoursesAfterTen;
 import com.srajan.edumantra.HomeScreen;
 import com.srajan.edumantra.MainCourses.AfterTwelveList;
 import com.srajan.edumantra.MainCourses.Common;
+import com.srajan.edumantra.NavigationHome;
 import com.srajan.edumantra.R;
 import com.srajan.edumantra.RequestQueue.WebService;
 
@@ -62,7 +64,7 @@ public class CoursesAfterElevenList extends AppCompatActivity {
     private void get() {
 
 
-        String url = "http://192.168.2.5:7878/mahacareer/coursesafterten/58f0817cd3e2433a0c522b4d";
+        String url = "http://192.168.0.18:8787/mahacareer/coursesafterten/58f0817cd3e2433a0c522b4d";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -104,15 +106,15 @@ public class CoursesAfterElevenList extends AppCompatActivity {
         ListView list = ((ListView) findViewById(R.id.listCAT));
         list.setAdapter(adapter);
 
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (position == 0) {
-//                    Intent intent = new Intent(CoursesAfterElevenList.this, HomeScreen.class);
-//                    startActivity(intent);
-//                }
-//            }
-//        });
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    Intent intent = new Intent(CoursesAfterElevenList.this, DescriptionActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
 
     }
@@ -120,7 +122,7 @@ public class CoursesAfterElevenList extends AppCompatActivity {
     private void get1() {
 
 
-        String url = "http://192.168.2.5:7878/mahacareer/coursesafterten/58f0819dd3e2433a0c522b4e";
+        String url = "http://192.168.0.18:8787/mahacareer/coursesafterten/58f0819dd3e2433a0c522b4e";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -179,7 +181,7 @@ public class CoursesAfterElevenList extends AppCompatActivity {
     private void get2() {
 
 
-        String url = "http://192.168.2.5:7878/mahacareer/coursesafterten/58f081b9d3e2433a0c522b4f";
+        String url = "http://192.168.0.18:8787/mahacareer/coursesafterten/58f081b9d3e2433a0c522b4f";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -238,7 +240,7 @@ public class CoursesAfterElevenList extends AppCompatActivity {
     private void get3() {
 
 
-        String url = "http://192.168.2.5:7878/mahacareer/coursesafterten/58f081d4d3e2433a0c522b50";
+        String url = "http://192.168.0.18:8787/mahacareer/coursesafterten/58f081d4d3e2433a0c522b50";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -296,7 +298,7 @@ public class CoursesAfterElevenList extends AppCompatActivity {
     private void get4() {
 
 
-        String url = "http://192.168.2.5:7878/mahacareer/coursesafterten/58f081fbd3e2433a0c522b51";
+        String url = "http://192.168.0.18:8787/mahacareer/coursesafterten/58f081fbd3e2433a0c522b51";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -357,7 +359,7 @@ public class CoursesAfterElevenList extends AppCompatActivity {
             finish();
         if(item.getItemId()== R.id.actionHome)
         {
-            Intent intent=new Intent(CoursesAfterElevenList.this,HomeScreen.class);
+            Intent intent=new Intent(CoursesAfterElevenList.this,NavigationHome.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             CoursesAfterElevenList.this.finish();

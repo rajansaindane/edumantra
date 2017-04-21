@@ -122,7 +122,7 @@ public class CareerPath extends AppCompatActivity {
             finish();
         if(item.getItemId()== R.id.actionHome)
         {
-            Intent intent=new Intent(CareerPath.this,HomeScreen.class);
+            Intent intent=new Intent(CareerPath.this,NavigationHome.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             CareerPath.this.finish();
