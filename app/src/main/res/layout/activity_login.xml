@@ -9,10 +9,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#59c4be"
+    android:background="@drawable/background"
     android:orientation="vertical"
     tools:context="com.srajan.edumantra.LoginActivity">
-
+    <!--#59c4be-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -47,7 +47,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="7dp"
-                android:background="#50b0ab"
+                android:background="#75aad1"
                 android:text="Sign In"
                 android:textColor="#ffffff"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -64,6 +64,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:text="Skip"
+                android:background="#75aad1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"

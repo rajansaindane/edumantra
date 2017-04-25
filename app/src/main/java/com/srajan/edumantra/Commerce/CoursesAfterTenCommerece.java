@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -16,6 +18,7 @@ import com.google.gson.Gson;
 import com.srajan.edumantra.Adapter.CustomListAdapterArtsTen;
 import com.srajan.edumantra.Adapter.CustomListAdapterCommereceTen;
 import com.srajan.edumantra.CoursesAfterTwelve.CoursesInPcb;
+import com.srajan.edumantra.Descriptions.DescriptionActivity;
 import com.srajan.edumantra.Domain.AfterTen;
 import com.srajan.edumantra.Domain.AfterTenInfo;
 import com.srajan.edumantra.HomeScreen;
@@ -38,7 +41,7 @@ public class CoursesAfterTenCommerece extends AppCompatActivity {
     private void get() {
 
 
-        String url = "http://192.168.0.18:8787/mahacareer/afterten/getListAfterTen";
+        String url = "http://192.168.43.227:8787/mahacareer/afterten/getListAfterTen";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -80,6 +83,41 @@ public class CoursesAfterTenCommerece extends AppCompatActivity {
 ////        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, jokes);
         ListView list = ((ListView) findViewById(R.id.listCommerece));
         list.setAdapter(adapter);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position==0)
+                {
+                    Intent intent=new Intent(CoursesAfterTenCommerece.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",152);
+                    startActivity(intent);
+                }
+                if (position==1)
+                {
+                    Intent intent=new Intent(CoursesAfterTenCommerece.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",153);
+                    startActivity(intent);
+                }
+                if (position==2)
+                {
+                    Intent intent=new Intent(CoursesAfterTenCommerece.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",154);
+                    startActivity(intent);
+                }
+                if (position==3)
+                {
+                    Intent intent=new Intent(CoursesAfterTenCommerece.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",155);
+                    startActivity(intent);
+                }
+                if (position==4)
+                {
+                    Intent intent=new Intent(CoursesAfterTenCommerece.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",156);
+                    startActivity(intent);
+                }
+            }
+        });
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

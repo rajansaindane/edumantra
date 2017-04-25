@@ -1,46 +1,57 @@
 package com.srajan.edumantra.Domain;
 
+import java.util.ArrayList;
+
 /**
- * Created by rajan on 20/4/17.
+ * Created by rajan on 21/4/17.
  */
 
-public class Description
-{
+public class Description {
 
-    private String courseName;
-    private String duration;
-    private String description;
-    private String jobTitle;
+    private String id;
+    private String mainCourseName;
+    private String classType;
+    private ArrayList<DescriptionInfo> descriptions;
+    private float score;
 
-    public String getCourseName() {
-        return courseName;
+    public String getId() {
+        return id;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getDuration() {
-        return duration;
+    public String getMainCourseName() {
+        return mainCourseName;
     }
 
-    public void setDuration(String duration) {
-        this.duration = duration;
+    public void setMainCourseName(String mainCourseName) {
+        this.mainCourseName = mainCourseName;
     }
 
-    public String getDescription() {
-        return description;
+    public String getClassType() {
+        return classType;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setClassType(String classType) {
+        this.classType = classType;
     }
 
-    public String getJobTitle() {
-        return jobTitle;
+
+    public ArrayList<DescriptionInfo> getDescriptions() {
+        return descriptions;
     }
 
-    public void setJobTitle(String jobTitle) {
-        this.jobTitle = jobTitle;
+    public void setDescriptions(ArrayList<DescriptionInfo> descriptions) {
+        this.descriptions = descriptions;
+    }
+
+    public float getScore() {
+        return score;
+    }
+
+    public void setScore(float score) {
+        this.score = score;
     }
 }

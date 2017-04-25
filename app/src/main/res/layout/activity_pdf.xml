@@ -4,13 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.srajan.edumantra.Pdf">
+    tools:context="com.srajan.edumantra.Pdf"
+    android:background="@drawable/background">
 
-<com.github.barteksc.pdfviewer.PDFView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/webpdf">
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webarticle"
+        android:background="@drawable/background"
+        >
 
-</com.github.barteksc.pdfviewer.PDFView>
+    </WebView>
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/graphicarticle"
+        android:background="@drawable/background"
+        >
+
+    </WebView>
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gamearticle"
+        android:background="@drawable/background"
+        >
+
+    </WebView>
+
+<!--<com.github.barteksc.pdfviewer.PDFView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/webpdf">-->
+
+<!--</com.github.barteksc.pdfviewer.PDFView>-->
 
 </LinearLayout>

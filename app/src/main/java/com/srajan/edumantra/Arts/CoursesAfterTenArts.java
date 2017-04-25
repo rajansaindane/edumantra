@@ -38,7 +38,7 @@ public class CoursesAfterTenArts extends AppCompatActivity {
     private void get() {
 
 
-        String url = "http://192.168.0.18:8787/mahacareer/afterten/getListAfterTen";
+        String url = "http://192.168.43.227:8787/mahacareer/afterten/getListAfterTen";
 
 
         WebService.q(this).add(new StringRequest(url,

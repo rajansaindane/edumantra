@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -17,6 +19,7 @@ import com.srajan.edumantra.Adapter.CustomListAdapterPcm;
 import com.srajan.edumantra.Adapter.CustomListAdapterPcmb;
 import com.srajan.edumantra.Adapter.CustomerListAdapterPcb;
 import com.srajan.edumantra.AfterArts;
+import com.srajan.edumantra.Descriptions.DescriptionActivity;
 import com.srajan.edumantra.Domain.CoursesAfterTwelve;
 import com.srajan.edumantra.HomeScreen;
 import com.srajan.edumantra.MainCourses.AfterTwelveList;
@@ -61,7 +64,7 @@ public class CoursesInPcb extends AppCompatActivity {
     private void get3() {
 
 
-        String url = "http://192.168.2.5:8787/mahacareer/coursesaftertwelve/58f1c6edf1233c4f93e61995";
+        String url = "http://192.168.43.227:8787/mahacareer/coursesaftertwelve/58f1c6edf1233c4f93e61995";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -99,24 +102,25 @@ public class CoursesInPcb extends AppCompatActivity {
 
         Log.i("@srajan", "arr" + jokes);
         CustomListAdapterPcmb adapter = new CustomListAdapterPcmb(this, jokes);
-////        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, jokes);
+///        ArrayAdapter<String> adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, jokes);
         ListView list = ((ListView) findViewById(R.id.listpcb));
         list.setAdapter(adapter);
 
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (position == 0) {
-//                    Intent intent = new Intent(CoursesAfterElevenList.this, HomeScreen.class);
-//                    startActivity(intent);
-//                }
-//            }
-//        });
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",141);
+                    startActivity(intent);
+                }
+            }
+        });
     }
 
     private void get2() {
 
-        String url = "http://192.168.0.18:8787/mahacareer/coursesaftertwelve/58f1c6c3f1233c4f93e61994";
+        String url = "http://192.168.43.227:8787/mahacareer/coursesaftertwelve/58f1c6c3f1233c4f93e61994";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -158,15 +162,36 @@ public class CoursesInPcb extends AppCompatActivity {
         ListView list = ((ListView) findViewById(R.id.listpcb));
         list.setAdapter(adapter);
 
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (position == 0) {
-//                    Intent intent = new Intent(CoursesAfterElevenList.this, HomeScreen.class);
-//                    startActivity(intent);
-//                }
-//            }
-//        });
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",136);
+                    startActivity(intent);
+                }
+                if (position == 1) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",137);
+                    startActivity(intent);
+                }
+                if (position == 2) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",138);
+                    startActivity(intent);
+                }
+                if (position == 3) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",139);
+                    startActivity(intent);
+                }
+                if (position == 4) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",140);
+                    startActivity(intent);
+                }
+            }
+        });
 
 
     }
@@ -174,7 +199,7 @@ public class CoursesInPcb extends AppCompatActivity {
     private void get() {
 
 
-        String url = "http://192.168.0.18:8787/mahacareer/coursesaftertwelve/58f1c696f1233c4f93e61993";
+        String url = "http://192.168.43.227:8787/mahacareer/coursesaftertwelve/58f1c696f1233c4f93e61993";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -216,15 +241,71 @@ public class CoursesInPcb extends AppCompatActivity {
         ListView list = ((ListView) findViewById(R.id.listpcb));
         list.setAdapter(adapter);
 
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (position == 0) {
-//                    Intent intent = new Intent(CoursesAfterElevenList.this, HomeScreen.class);
-//                    startActivity(intent);
-//                }
-//            }
-//        });
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",124);
+                    startActivity(intent);
+                }
+                if (position == 1) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",125);
+                    startActivity(intent);
+                }
+                if (position == 2) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",126);
+                    startActivity(intent);
+                }
+                if (position == 3) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",127);
+                    startActivity(intent);
+                }
+                if (position == 4) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",128);
+                    startActivity(intent);
+                }
+                if (position == 5) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",129);
+                    startActivity(intent);
+                }
+                if (position == 6) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",130);
+                    startActivity(intent);
+                }
+                if (position == 7) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",131);
+                    startActivity(intent);
+                }
+                if (position == 8) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",132);
+                    startActivity(intent);
+                }
+                if (position == 9) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",133);
+                    startActivity(intent);
+                }
+                if (position == 10) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",134);
+                    startActivity(intent);
+                }
+                if (position == 11) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",135);
+                    startActivity(intent);
+                }
+            }
+        });
 
 
     }
@@ -232,7 +313,7 @@ public class CoursesInPcb extends AppCompatActivity {
     private void get1() {
 
 
-        String url = "http://192.168.0.18:8787/mahacareer/coursesaftertwelve/58f1c669f1233c4f93e61992";
+        String url = "http://192.168.43.227:8787/mahacareer/coursesaftertwelve/58f1c669f1233c4f93e61992";
 
 
         WebService.q(this).add(new StringRequest(url,
@@ -274,15 +355,56 @@ public class CoursesInPcb extends AppCompatActivity {
         ListView list = ((ListView) findViewById(R.id.listpcb));
         list.setAdapter(adapter);
 
-//        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//                if (position == 0) {
-//                    Intent intent = new Intent(CoursesAfterElevenList.this, HomeScreen.class);
-//                    startActivity(intent);
-//                }
-//            }
-//        });
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 0) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",115);
+                    startActivity(intent);
+                }
+                if (position == 1) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",116);
+                    startActivity(intent);
+                }
+                if (position == 2) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",117);
+                    startActivity(intent);
+                }
+                if (position == 3) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",118);
+                    startActivity(intent);
+                }
+                if (position == 4) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",119);
+                    startActivity(intent);
+                }
+                if (position == 5) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",120);
+                    startActivity(intent);
+                }
+                if (position == 6) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",121);
+                    startActivity(intent);
+                }
+                if (position == 7) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",122);
+                    startActivity(intent);
+                }
+                if (position == 8) {
+                    Intent intent = new Intent(CoursesInPcb.this, DescriptionActivity.class);
+                    intent.putExtra("srajan",123);
+                    startActivity(intent);
+                }
+            }
+        });
 
 
     }

@@ -24,11 +24,37 @@ public class Articales extends AppCompatActivity {
         txt3=(TextView)findViewById(R.id.textView3);
 
         txt.setOnClickListener(this::OpenWebArticle);
+        txt1.setOnClickListener(this::openGraphicDesign);
+        txt2.setOnClickListener(this::openGameCareer);
+        txt3.setOnClickListener(this::openAnimation);
+    }
+
+    private void openAnimation(View view)
+    {
+        Intent intent=new Intent(Articales.this,Pdf.class);
+        intent.putExtra("srajan",203);
+        startActivity(intent);
+    }
+
+    private void openGameCareer(View view)
+    {
+        Intent intent=new Intent(Articales.this,Pdf.class);
+        intent.putExtra("srajan",202);
+        startActivity(intent);
+    }
+
+    private void openGraphicDesign(View view) {
+
+        Intent intent=new Intent(Articales.this,Pdf.class);
+        intent.putExtra("srajan",201);
+        startActivity(intent);
+
     }
 
     private void OpenWebArticle(View view) {
 
         Intent intent=new Intent(Articales.this,Pdf.class);
+        intent.putExtra("srajan",200);
         startActivity(intent);
 
     }

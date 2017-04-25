@@ -6,4 +6,5 @@
     <color name="colorPrimaryDark1">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="transperant">#59c4be</color>
+    <color name="backup">#66a1cc</color>
 </resources>

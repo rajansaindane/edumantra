@@ -49,7 +49,7 @@ public class AfterTwelveList extends AppCompatActivity {
 
 
 
-        String url = "http://192.168.0.18:8787/mahacareer/aftertwelve/getListAfterTwelve";
+        String url = "http://192.168.43.227:8787/mahacareer/aftertwelve/getListAfterTwelve";
 
 
         WebService.q(this).add(new StringRequest(url,

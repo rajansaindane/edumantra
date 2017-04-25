@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.srajan.edumantra.AfterArts"
-    android:background="#59c4be">
-
+    android:background="@drawable/background">
+    <!--#59c4be-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

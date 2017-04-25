@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.srajan.edumantra.CoursesAfterTen.CoursesAfterElevenList"
-    android:background="#66a1cc">
+    android:background="@drawable/background">
 
     <ListView
         android:layout_width="match_parent"
